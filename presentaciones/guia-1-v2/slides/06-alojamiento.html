@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-bg-warm); }
+
+  .housing-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 100px;
+    position: relative;
+    background: var(--enae-bg-warm);
+  }
+
+  .housing-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+
+  .housing-header-left .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 14px;
+  }
+
+  .housing-header h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-ink);
+  }
+
+  .housing-header-right {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--enae-text-light);
+    text-align: right;
+    max-width: 360px;
+  }
+
+  .housing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .housing-card {
+    background: var(--enae-white);
+    border-radius: 18px;
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--enae-border);
+    transition: box-shadow 0.2s;
+  }
+  .housing-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  }
+  .housing-card.recommended {
+    border-color: var(--enae-granate);
+    border-width: 2px;
+    position: relative;
+  }
+  .housing-card.recommended::before {
+    content: 'Recomendada';
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    padding: 2px 12px;
+    background: var(--enae-granate);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 6px;
+  }
+
+  .housing-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--enae-ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .housing-card .housing-type {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--enae-granate);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  .housing-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--enae-text);
+    flex: 1;
+  }
+
+  .housing-card .housing-contact {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--enae-border);
+    font-size: 12px;
+    color: var(--enae-text-light);
+    line-height: 1.5;
+  }
+  .housing-card .housing-contact strong {
+    color: var(--enae-ink);
+  }
+
+  .housing-footer {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .housing-footer .zone-tag {
+    padding: 6px 14px;
+    background: rgba(169,24,49,0.06);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--enae-ink);
+  }
+  .housing-footer .zone-label {
+    font-size: 12px;
+    color: var(--enae-text-light);
+    margin-right: 8px;
+  }
+
+  .logo-corner { filter: brightness(0); }
+  .slide-number { color: var(--enae-text-light); }
+</style>
+</head>
+<body>
+<div class="housing-slide slide-base">
+  <div class="housing-header">
+    <div class="housing-header-left">
+      <span class="section-label" data-field="section_label">Paso 5</span>
+      <h1 data-field="title">Alojamiento</h1>
+    </div>
+    <div class="housing-header-right" data-field="body">
+      El alojamiento lo gestiona cada alumno. ENAE orienta con opciones y referencias.
+    </div>
+  </div>
+
+  <div class="housing-grid">
+    <div class="housing-card recommended">
+      <h3 data-field="item_1_title">BRAVO Murcia</h3>
+      <div class="housing-type" data-field="item_1_label">Residencia de estudiantes</div>
+      <p data-field="item_1_desc">Residencia nueva con habitaciones individuales y twodios. Zonas comunes, gimnasio, piscina, restaurante, seguridad 24h.</p>
+      <div class="housing-contact">
+        <strong>Código ENAE26</strong> — 6% descuento<br>
+        +34 608 34 35 34<br>
+        murcia@bravostudents.com
+      </div>
+    </div>
+
+    <div class="housing-card">
+      <h3 data-field="item_2_title">Apartamentos Campus</h3>
+      <div class="housing-type" data-field="item_2_label">Residencia universitaria</div>
+      <p data-field="item_2_desc">Cercanía a ENAE y acceso preferente para alumnos del programa.</p>
+      <div class="housing-contact">
+        <strong>Noelia Peñalver</strong><br>
+        +34 968 36 41 26<br>
+        murcia@residencias-estudiantes.com
+      </div>
+    </div>
+
+    <div class="housing-card">
+      <h3 data-field="item_3_title">Smileroom Rent</h3>
+      <div class="housing-type" data-field="item_3_label">Pisos compartidos</div>
+      <p data-field="item_3_desc">Habitaciones individuales o compartidas en el centro. Apartamentos equipados con buena ubicación.</p>
+      <div class="housing-contact">
+        <strong>Referencia ENAE disponible</strong><br>
+        enae.es/pdf/SmileRoom-ENAE.pdf
+      </div>
+    </div>
+
+    <div class="housing-card">
+      <h3 data-field="item_4_title">Guru Alojamientos</h3>
+      <div class="housing-type" data-field="item_4_label">Estudios y habitaciones</div>
+      <p data-field="item_4_desc">Habitaciones y estudios equipados en zonas céntricas y bien comunicadas.</p>
+      <div class="housing-contact">
+        <strong>5% descuento ENAE</strong>
+      </div>
+    </div>
+
+    <div class="housing-card">
+      <h3 data-field="item_5_title">Apartamentos El Recreo</h3>
+      <div class="housing-type" data-field="item_5_label">Pisos céntricos</div>
+      <p data-field="item_5_desc">Cocina completa y habitaciones equipadas. Apertura con tarjeta, móvil o smartwatch.</p>
+      <div class="housing-contact">
+        Contacto directo
+      </div>
+    </div>
+
+    <div class="housing-card">
+      <h3 data-field="item_6_title">Portales inmobiliarios</h3>
+      <div class="housing-type" data-field="item_6_label">Búsqueda directa</div>
+      <p data-field="item_6_desc">Idealista, Fotocasa y Spotahome para búsqueda autónoma de pisos y habitaciones.</p>
+      <div class="housing-contact">
+        idealista.com · fotocasa.es · spotahome.com
+      </div>
+    </div>
+  </div>
+
+  <div class="housing-footer">
+    <span class="zone-label">Zonas recomendadas:</span>
+    <span class="zone-tag">Gran Vía</span>
+    <span class="zone-tag">Santo Domingo</span>
+    <span class="zone-tag">Juan Carlos I</span>
+    <span class="zone-tag">Plaza Circular</span>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">06 / 10</span>
+</div>
+</body>
+</html>

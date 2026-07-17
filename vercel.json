@@ -1,0 +1,14 @@
+{
+  "framework": null,
+  "buildCommand": "npm run build:css || true",
+  "installCommand": "npm install",
+  "outputDirectory": ".",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ]
+}

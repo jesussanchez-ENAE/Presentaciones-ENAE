@@ -1,0 +1,69 @@
+:root {
+  --enae-granate: #a91831;
+  --enae-granate-light: #c92040;
+  --enae-dark: #161817;
+  --enae-dark-warm: #1e1a19;
+  --enae-ink: #202221;
+  --enae-text: #4a4542;
+  --enae-text-light: #8a8580;
+  --enae-bg-warm: #f5f2ef;
+  --enae-bg-light: #faf9f7;
+  --enae-white: #ffffff;
+  --enae-border: #e8e4e0;
+  --enae-accent-gold: #c7a84e;
+
+  --font-display: 'SFUIDisplay', 'Arial Black', 'Helvetica Neue', sans-serif;
+  --font-body: 'Open Sans', -apple-system, sans-serif;
+
+  --slide-w: 1920px;
+  --slide-h: 1080px;
+}
+
+@font-face {
+  font-family: 'SFUIDisplay';
+  src: url(../../../assets/fonts/SFUIDisplay-Black.otf) format("opentype");
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'SFUIDisplay';
+  src: url(../../../assets/fonts/SFUIDisplay-Bold.otf) format("opentype");
+  font-weight: 700;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body, html {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  overflow: hidden;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.slide-base {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-corner {
+  position: absolute;
+  top: 44px;
+  right: 48px;
+  height: 36px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.slide-number {
+  position: absolute;
+  bottom: 40px;
+  right: 48px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  opacity: 0.4;
+  z-index: 10;
+}

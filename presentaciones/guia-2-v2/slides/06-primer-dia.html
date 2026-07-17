@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-bg-warm); }
+
+  .firstday-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    position: relative;
+    background: var(--enae-bg-warm);
+  }
+
+  .firstday-left {
+    width: 520px;
+    padding: 80px 60px 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .firstday-left .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 20px;
+  }
+  .firstday-left h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-ink);
+    margin-bottom: 32px;
+  }
+
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--enae-border);
+  }
+  .step-item:last-child { border-bottom: none; }
+
+  .step-num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--enae-granate);
+    opacity: 0.4;
+    min-width: 28px;
+    padding-top: 1px;
+  }
+  .step-text {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--enae-text);
+  }
+  .step-text strong {
+    color: var(--enae-ink);
+    font-weight: 600;
+  }
+
+  .firstday-right {
+    flex: 1;
+    padding: 72px 80px 72px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .transport-section h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--enae-ink);
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--enae-granate);
+    margin-bottom: 20px;
+  }
+
+  .transport-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 22px;
+    background: var(--enae-white);
+    border: 1px solid var(--enae-border);
+    border-radius: 14px;
+    margin-bottom: 12px;
+  }
+
+  .transport-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 12px;
+    background: rgba(169,24,49,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .transport-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--enae-granate);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .transport-info h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--enae-ink);
+    margin-bottom: 4px;
+  }
+  .transport-info p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--enae-text);
+  }
+  .transport-info .transport-detail {
+    font-size: 13px;
+    color: var(--enae-text-light);
+    margin-top: 2px;
+  }
+
+  .logo-corner { filter: brightness(0); }
+  .slide-number { color: var(--enae-text-light); }
+</style>
+</head>
+<body>
+<div class="firstday-slide slide-base">
+  <div class="firstday-left">
+    <span class="section-label" data-field="section_label">Paso 4</span>
+    <h1 data-field="title">Tu primer día en Murcia</h1>
+    <div class="step-list">
+      <div class="step-item">
+        <span class="step-num">1</span>
+        <span class="step-text" data-field="item_1_desc"><strong>Llega al alojamiento</strong> — revisa llaves, Wi-Fi, agua caliente, enchufes y normas de la vivienda.</span>
+      </div>
+      <div class="step-item">
+        <span class="step-num">2</span>
+        <span class="step-text" data-field="item_2_desc"><strong>Comparte tu llegada</strong> — avisa a tu familia o contacto de confianza.</span>
+      </div>
+      <div class="step-item">
+        <span class="step-num">3</span>
+        <span class="step-text" data-field="item_3_desc"><strong>Localiza lo esencial</strong> — farmacia, supermercado, parada de transporte y cajero cercano.</span>
+      </div>
+      <div class="step-item">
+        <span class="step-num">4</span>
+        <span class="step-text" data-field="item_4_desc"><strong>Ruta a ENAE</strong> — comprueba cómo llegar antes de tu primer día de inducción.</span>
+      </div>
+      <div class="step-item">
+        <span class="step-num">5</span>
+        <span class="step-text" data-field="item_5_desc"><strong>Descansa</strong> — los primeros trámites serán más fáciles si descansas primero.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="firstday-right">
+    <div class="transport-section">
+      <h2>Transporte en Murcia</h2>
+      <div class="transport-card">
+        <div class="transport-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="8" cy="20" r="1"/><circle cx="16" cy="20" r="1"/></svg></div>
+        <div class="transport-info">
+          <h3>Tranvía</h3>
+          <p>Medio más usado por estudiantes. Rápido y económico.</p>
+          <span class="transport-detail">tranviademurcia.es · Tarjeta recargable</span>
+        </div>
+      </div>
+      <div class="transport-card">
+        <div class="transport-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div class="transport-info">
+          <h3>Autobús TMP</h3>
+          <p>Desplazamientos urbanos. Línea 39 al campus.</p>
+          <span class="transport-detail">tmpmurcia.es</span>
+        </div>
+      </div>
+      <div class="transport-card">
+        <div class="transport-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg></div>
+        <div class="transport-info">
+          <h3>Taxi</h3>
+          <p>Llegadas nocturnas o equipaje pesado.</p>
+          <span class="transport-detail">968 248 800 · Recargos nocturnos y festivos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">06 / 11</span>
+</div>
+</body>
+</html>

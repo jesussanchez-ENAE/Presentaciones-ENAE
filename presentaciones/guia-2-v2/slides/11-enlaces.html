@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-granate); }
+
+  .cta-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 40%, rgba(255,255,255,0.08) 0%, transparent 70%),
+      var(--enae-granate);
+    text-align: center;
+  }
+
+  .cta-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+  }
+
+  .cta-slide h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--enae-white);
+    margin-bottom: 16px;
+  }
+  .cta-slide .cta-sub {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.6);
+    max-width: 600px;
+    margin-bottom: 48px;
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    max-width: 800px;
+  }
+
+  .cta-pill {
+    display: inline-block;
+    padding: 12px 28px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--enae-white);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: background 0.2s;
+  }
+  .cta-pill:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .cta-footer {
+    position: absolute;
+    bottom: 56px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.04em;
+  }
+
+  .logo-corner { filter: brightness(0) invert(1); }
+  .slide-number { color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<div class="cta-slide slide-base">
+  <div class="cta-badge" data-field="badge">Guía 02 · Pre-llegada</div>
+  <h1 data-field="cta_title">Todo listo para tu llegada</h1>
+  <p class="cta-sub" data-field="cta_subtitle">Consulta estos recursos antes de viajar. Estamos aquí para ayudarte en cada paso.</p>
+
+  <div class="cta-links">
+    <a class="cta-pill" href="#">enae.es</a>
+    <a class="cta-pill" href="#">Campus Virtual CANVAS</a>
+    <a class="cta-pill" href="#">Alojamiento BRAVO</a>
+    <a class="cta-pill" href="#">Tranvía de Murcia</a>
+    <a class="cta-pill" href="#">ALSA Autobuses</a>
+    <a class="cta-pill" href="#">Sede Electrónica Murcia</a>
+    <a class="cta-pill" href="#">Consulados en Murcia</a>
+  </div>
+
+  <div class="cta-footer" data-field="footer">ENAE Business School · Murcia, España</div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">11 / 11</span>
+</div>
+</body>
+</html>

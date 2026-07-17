@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-bg-light); }
+
+  .enae-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 100px;
+    position: relative;
+    background: var(--enae-bg-light);
+  }
+
+  .enae-header {
+    margin-bottom: 36px;
+  }
+  .enae-header .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 16px;
+  }
+  .enae-header h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-ink);
+  }
+
+  .enae-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .enae-card {
+    padding: 28px 24px;
+    background: var(--enae-white);
+    border: 1px solid var(--enae-border);
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .enae-card-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 10px;
+    background: rgba(169,24,49,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .enae-card-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--enae-granate);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .enae-card-body h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--enae-ink);
+    margin-bottom: 6px;
+  }
+  .enae-card-body p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--enae-text);
+  }
+
+  .enae-callout {
+    margin-top: 20px;
+    padding: 18px 24px;
+    background: var(--enae-ink);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .enae-callout svg {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    stroke: var(--enae-granate);
+    fill: none;
+    stroke-width: 2;
+  }
+  .enae-callout p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.75);
+  }
+  .enae-callout strong { color: var(--enae-white); }
+
+  .logo-corner { filter: brightness(0); }
+  .slide-number { color: var(--enae-text-light); }
+</style>
+</head>
+<body>
+<div class="enae-slide slide-base">
+  <div class="enae-header">
+    <span class="section-label" data-field="section_label">Paso 5</span>
+    <h1 data-field="title">Primeros días en ENAE</h1>
+  </div>
+
+  <div class="enae-grid">
+    <div class="enae-card">
+      <div class="enae-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="enae-card-body">
+        <h3 data-field="item_1_title">Asiste a la inducción</h3>
+        <p data-field="item_1_desc">Confirma horarios, aulas, calendario, normas de asistencia y criterios de evaluación.</p>
+      </div>
+    </div>
+    <div class="enae-card">
+      <div class="enae-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="enae-card-body">
+        <h3 data-field="item_2_title">Acceso digital</h3>
+        <p data-field="item_2_desc">Comprueba CANVAS, correo institucional y plataformas de clase desde el primer día.</p>
+      </div>
+    </div>
+    <div class="enae-card">
+      <div class="enae-card-icon"><svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+      <div class="enae-card-body">
+        <h3 data-field="item_3_title">Equipo necesario</h3>
+        <p data-field="item_3_desc">Portátil, cargador, adaptador europeo y libreta o soporte para notas.</p>
+      </div>
+    </div>
+    <div class="enae-card">
+      <div class="enae-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <div class="enae-card-body">
+        <h3 data-field="item_4_title">Gestión Académica</h3>
+        <p data-field="item_4_desc">Consulta dudas sobre grupos, horarios, certificados, notas o expedientes.</p>
+      </div>
+    </div>
+    <div class="enae-card">
+      <div class="enae-card-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div class="enae-card-body">
+        <h3 data-field="item_5_title">Empleo y Prácticas</h3>
+        <p data-field="item_5_desc">Pregunta por CV, LinkedIn y búsqueda de prácticas profesionales.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="enae-callout">
+    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    <p data-field="highlight"><strong>Comprueba acceso a CANVAS y correo institucional</strong> antes de tu primer día de clase.</p>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">07 / 11</span>
+</div>
+</body>
+</html>

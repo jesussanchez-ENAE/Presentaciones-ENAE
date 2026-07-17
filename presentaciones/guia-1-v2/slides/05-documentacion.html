@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-bg-light); }
+
+  .docs-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    position: relative;
+    background: var(--enae-bg-light);
+  }
+
+  .docs-left {
+    width: 520px;
+    padding: 80px 60px 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .docs-left .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 20px;
+  }
+
+  .docs-left h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-ink);
+    margin-bottom: 24px;
+  }
+
+  .docs-left p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--enae-text-light);
+  }
+
+  .docs-warning {
+    margin-top: 32px;
+    padding: 16px 20px;
+    background: rgba(169,24,49,0.07);
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--enae-ink);
+  }
+  .docs-warning svg {
+    width: 16px;
+    height: 16px;
+    vertical-align: -3px;
+    margin-right: 6px;
+    stroke: var(--enae-granate);
+    fill: none;
+    stroke-width: 2;
+  }
+
+  .docs-right {
+    flex: 1;
+    padding: 72px 80px 72px 40px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .doc-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .doc-column-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--enae-ink);
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--enae-granate);
+    margin-bottom: 20px;
+  }
+
+  .doc-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--enae-border);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--enae-text);
+  }
+  .doc-item:last-child {
+    border-bottom: none;
+  }
+  .doc-item strong {
+    color: var(--enae-ink);
+    font-weight: 600;
+  }
+  .doc-item .doc-note {
+    display: block;
+    font-size: 13px;
+    color: var(--enae-text-light);
+    margin-top: 3px;
+  }
+
+  .logo-corner { filter: brightness(0); }
+  .slide-number { color: var(--enae-text-light); }
+</style>
+</head>
+<body>
+<div class="docs-slide slide-base">
+  <div class="docs-left">
+    <span class="section-label" data-field="section_label">Paso 3</span>
+    <h1 data-field="title">Documentación académica y visado</h1>
+    <p data-field="body">Reúne los documentos necesarios para tu título oficial y para el visado de estudios. Algunos requieren apostilla o legalización y deben gestionarse desde tu país de origen.</p>
+    <div class="docs-warning" data-field="highlight">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      ENAE proporciona certificados de admisión, pero la decisión sobre visado depende del consulado español.
+    </div>
+  </div>
+
+  <div class="docs-right">
+    <div class="doc-column">
+      <div class="doc-column-title">Título oficial</div>
+      <div class="doc-item"><strong>Cédula de Identidad</strong> — copia apostillada por autoridades del país.</div>
+      <div class="doc-item"><strong>Título Universitario</strong> — copia con Apostilla de la Haya o legalización consular.</div>
+      <div class="doc-item"><strong>Certificado de Notas</strong> — copia apostillada o legalizada.</div>
+      <div class="doc-item"><strong>Certificado de Carga Horaria</strong>
+        <span class="doc-note">Solo si las notas no indican horas totales. Debe superar 1.800 h.</span>
+      </div>
+      <div class="doc-item"><strong>Certificado de acceso a posgrado</strong>
+        <span class="doc-note">Emitido por la universidad de origen.</span>
+      </div>
+    </div>
+
+    <div class="doc-column">
+      <div class="doc-column-title">Visado de estudios</div>
+      <div class="doc-item"><strong>Formulario + foto</strong> — del consulado o embajada española.</div>
+      <div class="doc-item"><strong>Pasaporte vigente</strong> — con validez suficiente.</div>
+      <div class="doc-item"><strong>Admisión ENAE</strong> — carta + plan de estudios.</div>
+      <div class="doc-item"><strong>Medios económicos</strong> — justificantes financieros.</div>
+      <div class="doc-item"><strong>Seguro médico</strong> — cobertura completa.</div>
+      <div class="doc-item"><strong>Alojamiento</strong> — reserva o contrato.
+        <span class="doc-note">Expediente: 1-3 meses. Empieza con margen.</span>
+      </div>
+    </div>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">05 / 10</span>
+</div>
+</body>
+</html>

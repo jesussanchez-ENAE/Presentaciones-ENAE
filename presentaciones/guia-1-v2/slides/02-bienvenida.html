@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-bg-warm); }
+
+  .welcome {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    position: relative;
+  }
+
+  .welcome-content {
+    flex: 1;
+    padding: 100px 80px 100px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .welcome-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 24px;
+  }
+
+  .welcome-content h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--enae-ink);
+    margin-bottom: 32px;
+  }
+
+  .welcome-content p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--enae-text);
+    max-width: 560px;
+  }
+  .welcome-content p + p {
+    margin-top: 16px;
+  }
+
+  .welcome-highlight {
+    margin-top: 40px;
+    padding: 20px 28px;
+    background: rgba(169,24,49,0.06);
+    border-left: 3px solid var(--enae-granate);
+    border-radius: 0 12px 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--enae-ink);
+    max-width: 520px;
+  }
+
+  .welcome-photo {
+    width: 640px;
+    position: relative;
+    overflow: hidden;
+  }
+  .welcome-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .welcome-photo .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e8e4e0, #d4cfc9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .welcome-photo .photo-placeholder span {
+    font-size: 14px;
+    color: var(--enae-text-light);
+    letter-spacing: 0.05em;
+  }
+
+  .welcome-photo::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(to right, var(--enae-bg-warm), transparent);
+  }
+
+  .logo-corner { filter: brightness(0); }
+  .slide-number { color: var(--enae-text-light); }
+</style>
+</head>
+<body>
+<div class="welcome slide-base">
+  <div class="welcome-content">
+    <span class="welcome-label" data-field="section_label">Bienvenida</span>
+    <h1 data-field="title">Bienvenido/a<br>a ENAE</h1>
+    <p data-field="body">Nos alegra darte la bienvenida a ENAE Business School y acompañarte en el inicio de esta nueva etapa académica y profesional en Murcia.</p>
+    <p data-field="body_2">Hemos preparado esta guía para ayudarte a avanzar con claridad en cada paso: documentación, viaje, alojamiento y tu incorporación académica.</p>
+    <div class="welcome-highlight" data-field="highlight">
+      Desde este momento, cuentas con el equipo de ENAE para orientarte en el proceso. Esperamos darte la bienvenida muy pronto en Murcia.
+    </div>
+  </div>
+
+  <div class="welcome-photo">
+    <div class="photo-placeholder">
+      <span>Foto campus ENAE</span>
+    </div>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">02 / 10</span>
+</div>
+</body>
+</html>

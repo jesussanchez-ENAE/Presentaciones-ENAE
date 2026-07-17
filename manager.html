@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENAE Presentaciones Corporativas — Panel de Gestión</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="/assets/css/admin.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    corePlugins: { preflight: false }
+  }
+</script>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="logo-container">
+    <div class="brand-badge">E</div>
+    <div class="brand-title">
+      <h1>ENAE Presentaciones</h1>
+      <span>Panel de Gestión</span>
+    </div>
+  </div>
+  <div class="header-actions">
+    <a href="/index.html" class="btn btn-primary" aria-label="Crear Nueva Presentación">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span>Crear Nueva Presentación</span>
+    </a>
+  </div>
+</header>
+
+<main class="main-content">
+  <div class="dashboard-view">
+
+    <!-- Welcome banner -->
+    <div class="welcome-banner">
+      <h2>Generador de Presentaciones Corporativas ENAE</h2>
+      <p>Diseña presentaciones corporativas interactivas alineadas al <strong>Manual de Identidad Oficial de ENAE Business School</strong> — utilizando el Tema Claro, tipografía mixta y fondos corporativos.</p>
+      <a href="/index.html" class="btn btn-accent" aria-label="Diseñar desde Cero">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Diseñar desde Cero
+      </a>
+    </div>
+
+    <!-- Created dossiers -->
+    <section class="dashboard-section" aria-labelledby="dossiers-heading">
+      <div class="section-header-row">
+        <h3 id="dossiers-heading">Tus Presentaciones Creadas</h3>
+        <span class="section-count" id="count"></span>
+      </div>
+
+      <!-- Buscador -->
+      <div style="margin-bottom: 24px;">
+        <label for="search-dossiers" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;">Buscar presentación</label>
+        <div style="position: relative; max-width: 400px;">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; pointer-events: none;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="search-dossiers" placeholder="Buscar presentación por nombre..." style="width: 100%; padding: 12px 14px 12px 40px; border-radius: var(--r-md); background: var(--input-bg); border: 1px solid var(--input-border); color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: var(--tr);">
+        </div>
+      </div>
+
+      <div class="saved-grid" id="grid">
+        <div class="loading"><span class="spin" aria-hidden="true"></span>Cargando presentaciones…</div>
+      </div>
+    </section>
+
+    <!-- Guías de Bienvenida -->
+    <section class="dashboard-section" aria-labelledby="guias-heading">
+      <div class="section-header-row">
+        <h3 id="guias-heading">Guías de Bienvenida</h3>
+        <span class="section-count" id="guias-count"></span>
+      </div>
+      <div class="saved-grid" id="guias-grid">
+        <div class="loading"><span class="spin" aria-hidden="true"></span>Cargando guías…</div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="/assets/js/dashboard.js"></script>
+</body>
+</html>

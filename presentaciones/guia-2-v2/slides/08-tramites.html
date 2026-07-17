@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-dark-warm); }
+
+  .tramites-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 100px;
+    position: relative;
+    background:
+      radial-gradient(ellipse 50% 50% at 20% 80%, rgba(169,24,49,0.05) 0%, transparent 70%),
+      var(--enae-dark-warm);
+  }
+
+  .tramites-header {
+    margin-bottom: 32px;
+  }
+  .tramites-header .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 14px;
+  }
+  .tramites-header h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-white);
+  }
+
+  .tramites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .tramite-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 24px 22px;
+  }
+
+  .tramite-num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--enae-granate);
+    opacity: 0.5;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .tramite-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 8px;
+  }
+  .tramite-card p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.55);
+  }
+  .tramite-card .tramite-where {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .tramites-footer {
+    margin-top: 16px;
+    padding: 14px 20px;
+    background: rgba(169,24,49,0.12);
+    border: 1px solid rgba(169,24,49,0.2);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .logo-corner { filter: brightness(0) invert(1); }
+  .slide-number { color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<div class="tramites-slide slide-base">
+  <div class="tramites-header">
+    <span class="section-label" data-field="section_label">Paso 6</span>
+    <h1 data-field="title">Trámites al llegar</h1>
+  </div>
+
+  <div class="tramites-grid">
+    <div class="tramite-card">
+      <div class="tramite-num">01</div>
+      <h3 data-field="item_1_title">Empadronamiento</h3>
+      <p data-field="item_1_desc">Inscripción en el padrón municipal. Necesario para casi todos los demás trámites.</p>
+      <div class="tramite-where" data-field="item_1_where">Ayuntamiento de Murcia</div>
+    </div>
+    <div class="tramite-card">
+      <div class="tramite-num">02</div>
+      <h3 data-field="item_2_title">NIE / TIE</h3>
+      <p data-field="item_2_desc">Número de identidad de extranjero. Imprescindible para trabajar, abrir cuenta y contratar servicios.</p>
+      <div class="tramite-where" data-field="item_2_where">Oficina de Extranjería</div>
+    </div>
+    <div class="tramite-card">
+      <div class="tramite-num">03</div>
+      <h3 data-field="item_3_title">Cuenta bancaria</h3>
+      <p data-field="item_3_desc">Abre una cuenta con pasaporte + NIE. Compara comisiones y acceso a app móvil.</p>
+      <div class="tramite-where" data-field="item_3_where">Banco a elección</div>
+    </div>
+    <div class="tramite-card">
+      <div class="tramite-num">04</div>
+      <h3 data-field="item_4_title">Tarjeta SIM</h3>
+      <p data-field="item_4_desc">Contrato o prepago con datos móviles. Necesitarás pasaporte o NIE para activar.</p>
+      <div class="tramite-where" data-field="item_4_where">Tienda de operador</div>
+    </div>
+    <div class="tramite-card">
+      <div class="tramite-num">05</div>
+      <h3 data-field="item_5_title">Alta en sanidad</h3>
+      <p data-field="item_5_desc">Solicita tarjeta sanitaria si tu seguro lo permite, o confirma cobertura privada.</p>
+      <div class="tramite-where" data-field="item_5_where">Centro de salud</div>
+    </div>
+    <div class="tramite-card">
+      <div class="tramite-num">06</div>
+      <h3 data-field="item_6_title">Inscripción consular</h3>
+      <p data-field="item_6_desc">Regístrate en el consulado de tu país. Útil para renovaciones y emergencias.</p>
+      <div class="tramite-where" data-field="item_6_where">Consulado correspondiente</div>
+    </div>
+  </div>
+
+  <div class="tramites-footer" data-field="footer">Realiza el empadronamiento en la primera semana. Es requisito para NIE, sanidad y cuenta bancaria.</div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">08 / 11</span>
+</div>
+</body>
+</html>

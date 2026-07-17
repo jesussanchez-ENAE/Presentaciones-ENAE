@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-dark); }
+
+  .budget-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    position: relative;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 50%, rgba(169,24,49,0.08) 0%, transparent 70%),
+      var(--enae-dark);
+  }
+
+  .budget-left {
+    width: 500px;
+    padding: 80px 60px 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .budget-left .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 20px;
+  }
+
+  .budget-left h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-white);
+    margin-bottom: 24px;
+  }
+
+  .budget-left p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .budget-total {
+    margin-top: 40px;
+    padding: 28px 32px;
+    background: rgba(169,24,49,0.12);
+    border: 1px solid rgba(169,24,49,0.2);
+    border-radius: 16px;
+  }
+  .budget-total-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+  }
+  .budget-total-range {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 36px;
+    color: var(--enae-white);
+    letter-spacing: -0.02em;
+  }
+  .budget-total-range span {
+    color: var(--enae-granate);
+  }
+
+  .budget-right {
+    flex: 1;
+    padding: 72px 80px 72px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .budget-table {
+    width: 100%;
+  }
+
+  .budget-row {
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .budget-row:last-child {
+    border-bottom: none;
+  }
+
+  .budget-row .b-label {
+    flex: 1;
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .budget-row .b-bar-wrap {
+    width: 340px;
+    margin: 0 24px;
+    position: relative;
+  }
+  .budget-row .b-bar {
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .budget-row .b-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--enae-granate), var(--enae-granate-light));
+  }
+
+  .budget-row .b-range {
+    width: 160px;
+    text-align: right;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: -0.01em;
+  }
+  .budget-row .b-range .b-sep {
+    color: rgba(255,255,255,0.25);
+    margin: 0 4px;
+  }
+
+  .logo-corner { filter: brightness(0) invert(1); }
+  .slide-number { color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<div class="budget-slide slide-base">
+  <div class="budget-left">
+    <span class="section-label" data-field="section_label">Paso 6</span>
+    <h1 data-field="title">Presupuesto mensual orientativo</h1>
+    <p data-field="body">Cifras orientativas para planificar tu estancia. El coste real dependerá de tu estilo de vida y elecciones de alojamiento.</p>
+
+    <div class="budget-total">
+      <div class="budget-total-label" data-field="total_label">Total mensual estimado</div>
+      <div class="budget-total-range" data-field="total_range">800 <span>—</span> 1.330 EUR</div>
+    </div>
+  </div>
+
+  <div class="budget-right">
+    <div class="budget-table">
+      <div class="budget-row">
+        <span class="b-label" data-field="item_1_label">Piso compartido</span>
+        <div class="b-bar-wrap"><div class="b-bar"><div class="b-bar-fill" style="width: 76%"></div></div></div>
+        <span class="b-range" data-field="item_1_range">300 <span class="b-sep">—</span> 500 EUR</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-label" data-field="item_2_label">Alimentación</span>
+        <div class="b-bar-wrap"><div class="b-bar"><div class="b-bar-fill" style="width: 54%"></div></div></div>
+        <span class="b-range" data-field="item_2_range">200 <span class="b-sep">—</span> 350 EUR</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-label" data-field="item_3_label">Ocio</span>
+        <div class="b-bar-wrap"><div class="b-bar"><div class="b-bar-fill" style="width: 30%"></div></div></div>
+        <span class="b-range" data-field="item_3_range">100 <span class="b-sep">—</span> 200 EUR</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-label" data-field="item_4_label">Luz</span>
+        <div class="b-bar-wrap"><div class="b-bar"><div class="b-bar-fill" style="width: 15%"></div></div></div>
+        <span class="b-range" data-field="item_4_range">60 <span class="b-sep">—</span> 100 EUR</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-label" data-field="item_5_label">Agua</span>
+        <div class="b-bar-wrap"><div class="b-bar"><div class="b-bar-fill" style="width: 12%"></div></div></div>
+        <span class="b-range" data-field="item_5_range">60 <span class="b-sep">—</span> 80 EUR</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-label" data-field="item_6_label">Internet</span>
+        <div class="b-bar-wrap"><div class="b-bar"><div class="b-bar-fill" style="width: 9%"></div></div></div>
+        <span class="b-range" data-field="item_6_range">25 <span class="b-sep">—</span> 60 EUR</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-label" data-field="item_7_label">Gas</span>
+        <div class="b-bar-wrap"><div class="b-bar"><div class="b-bar-fill" style="width: 7%"></div></div></div>
+        <span class="b-range" data-field="item_7_range">30 <span class="b-sep">—</span> 50 EUR</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-label" data-field="item_8_label">Transporte</span>
+        <div class="b-bar-wrap"><div class="b-bar"><div class="b-bar-fill" style="width: 5%"></div></div></div>
+        <span class="b-range" data-field="item_8_range">25 <span class="b-sep">—</span> 35 EUR</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-label" data-field="item_9_label">Celular</span>
+        <div class="b-bar-wrap"><div class="b-bar"><div class="b-bar-fill" style="width: 5%"></div></div></div>
+        <span class="b-range" data-field="item_9_range">25 <span class="b-sep">—</span> 35 EUR</span>
+      </div>
+    </div>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">07 / 10</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Guías — ENAE Business School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+  <style>
+    .editor-layout {
+      display: flex;
+      height: calc(100vh - 70px);
+      margin-top: 70px;
+    }
+
+    .slide-sidebar {
+      width: 260px;
+      min-width: 260px;
+      background: var(--panel-bg);
+      border-right: 1px solid var(--panel-border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .sidebar-header {
+      padding: 20px 16px 16px;
+      border-bottom: 1px solid var(--panel-border);
+    }
+    .sidebar-header h2 {
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .sidebar-header span {
+      font-size: 0.72rem;
+      color: var(--enae-red);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .slide-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px;
+    }
+    .slide-item {
+      padding: 12px 14px;
+      border-radius: var(--r-md);
+      cursor: pointer;
+      transition: var(--tr);
+      margin-bottom: 4px;
+      border: 1px solid transparent;
+    }
+    .slide-item:hover {
+      background: var(--input-bg);
+    }
+    .slide-item.active {
+      background: rgba(169, 24, 49, 0.12);
+      border-color: rgba(169, 24, 49, 0.3);
+    }
+    .slide-item .slide-num {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--enae-red);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .slide-item .slide-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .slide-item.active .slide-label {
+      color: #fff;
+    }
+
+    .editor-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .editor-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      border-bottom: 1px solid var(--panel-border);
+      background: var(--panel-bg);
+      gap: 12px;
+    }
+    .editor-toolbar h3 {
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+    .toolbar-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .view-toggle {
+      display: flex;
+      background: var(--input-bg);
+      border-radius: var(--r-md);
+      border: 1px solid var(--input-border);
+      overflow: hidden;
+    }
+    .view-toggle button {
+      padding: 8px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--tr);
+    }
+    .view-toggle button.active {
+      background: var(--enae-red);
+      color: #fff;
+    }
+    .view-toggle button:hover:not(.active) {
+      color: var(--text-primary);
+    }
+
+    .editor-content {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .fields-panel {
+      height: 100%;
+      overflow-y: auto;
+      padding: 32px;
+      background: var(--app-bg);
+    }
+    .fields-panel.hidden { display: none; }
+
+    .preview-panel {
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .preview-panel.hidden { display: none; }
+    .preview-panel iframe {
+      border: 0;
+      background: #fff;
+      box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+    }
+
+    .field-group {
+      margin-bottom: 20px;
+    }
+    .field-group label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .field-group input,
+    .field-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: var(--r-md);
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      outline: none;
+      transition: var(--tr);
+    }
+    .field-group input:focus,
+    .field-group textarea:focus {
+      border-color: var(--enae-red);
+      box-shadow: 0 0 0 3px rgba(169, 24, 49, 0.15);
+    }
+    .field-group textarea {
+      min-height: 80px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .fields-grid {
+      max-width: 800px;
+    }
+
+    .no-fields {
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--text-muted);
+    }
+    .no-fields svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+    .no-fields h4 {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .no-fields p {
+      font-size: 0.85rem;
+      max-width: 360px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .save-status {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+    .save-status.saved {
+      color: #22c55e;
+      background: rgba(34, 197, 94, 0.1);
+    }
+    .save-status.unsaved {
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.1);
+    }
+    .save-status.saving {
+      color: var(--text-muted);
+      background: var(--input-bg);
+    }
+  </style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="logo-container">
+    <div class="brand-badge">E</div>
+    <div class="brand-title">
+      <h1>Editor de Guías</h1>
+      <span id="guia-title-header">Cargando...</span>
+    </div>
+  </div>
+  <div class="header-actions">
+    <a href="/manager.html" class="btn btn-secondary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Volver al Panel
+    </a>
+  </div>
+</header>
+
+<div class="editor-layout">
+  <div class="slide-sidebar">
+    <div class="sidebar-header">
+      <h2 id="sidebar-title">Diapositivas</h2>
+      <span id="slide-count"></span>
+    </div>
+    <div class="slide-list" id="slide-list"></div>
+  </div>
+
+  <div class="editor-main">
+    <div class="editor-toolbar">
+      <h3 id="toolbar-slide-name">Selecciona una diapositiva</h3>
+      <div class="toolbar-actions">
+        <span class="save-status saved" id="save-status" style="display:none;"></span>
+        <div class="view-toggle">
+          <button class="active" id="btn-fields" onclick="setView('fields')">Campos</button>
+          <button id="btn-preview" onclick="setView('preview')">Vista Previa</button>
+        </div>
+        <button class="btn btn-primary" id="btn-save" onclick="saveFields()" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Guardar
+        </button>
+      </div>
+    </div>
+
+    <div class="editor-content">
+      <div class="fields-panel" id="fields-panel">
+        <div class="no-fields" id="empty-state">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          <h4>Selecciona una diapositiva</h4>
+          <p>Elige una diapositiva en el panel lateral para editar su contenido.</p>
+        </div>
+        <div class="fields-grid" id="fields-grid" style="display:none;"></div>
+      </div>
+      <div class="preview-panel hidden" id="preview-panel">
+        <iframe id="preview-iframe" width="960" height="540"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const guiaId = params.get('guia');
+
+let guiaData = null;
+let currentSlideIdx = null;
+let currentFields = {};
+let originalFields = {};
+let currentView = 'fields';
+
+function toast(msg, isErr) {
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast on' + (isErr ? ' err' : '');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function() { el.classList.remove('on'); }, 3500);
+}
+
+function fieldLabel(key) {
+  const labels = {
+    'title': 'Título principal',
+    'section_label': 'Etiqueta de sección',
+    'subtitle': 'Subtítulo',
+    'body': 'Texto principal',
+    'body_2': 'Texto secundario',
+    'highlight': 'Texto destacado',
+    'badge': 'Badge / etiqueta',
+    'guide_num': 'Número de guía',
+    'footer': 'Pie de nota',
+    'phone': 'Teléfono',
+    'cta_title': 'Título CTA',
+    'cta_subtitle': 'Subtítulo CTA'
+  };
+
+  if (labels[key]) return labels[key];
+
+  const m = key.match(/^item_(\d+)_(.+)$/);
+  if (m) {
+    const sub = { title: 'Título', desc: 'Descripción', detail: 'Detalle', where: 'Lugar', email: 'Email', ext: 'Extensión', time: 'Tiempo', url: 'URL', amount: 'Cantidad', label: 'Etiqueta', badge: 'Badge' };
+    return 'Elemento ' + m[1] + ' — ' + (sub[m[2]] || m[2]);
+  }
+
+  return key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function isLongField(key, value) {
+  if (key === 'body' || key === 'body_2' || key === 'highlight' || key === 'footer') return true;
+  if (key.endsWith('_desc')) return true;
+  if (value && value.length > 60) return true;
+  return false;
+}
+
+async function init() {
+  if (!guiaId) {
+    document.getElementById('guia-title-header').textContent = 'Error: sin guía';
+    return;
+  }
+
+  try {
+    const res = await fetch('/api/guias/' + guiaId);
+    if (!res.ok) throw new Error('Guía no encontrada');
+    guiaData = await res.json();
+
+    document.getElementById('guia-title-header').textContent = guiaData.shortTitle;
+    document.getElementById('sidebar-title').textContent = guiaData.shortTitle;
+    document.getElementById('slide-count').textContent = guiaData.slides.length + ' diapositivas';
+    document.title = guiaData.shortTitle + ' — Editor ENAE';
+
+    renderSlideList();
+
+    if (guiaData.slides.length > 0) {
+      selectSlide(0);
+    }
+  } catch (e) {
+    console.error(e);
+    document.getElementById('guia-title-header').textContent = 'Error al cargar';
+    toast('No se pudo cargar la guía. ¿Está el servidor activo?', true);
+  }
+}
+
+function renderSlideList() {
+  const list = document.getElementById('slide-list');
+  list.innerHTML = guiaData.slides.map(function(s, i) {
+    var num = s.file.match(/^(\d+)/);
+    return '<div class="slide-item' + (i === currentSlideIdx ? ' active' : '') + '" onclick="selectSlide(' + i + ')">' +
+      '<div class="slide-num">' + (num ? 'Slide ' + num[1] : 'Slide ' + (i+1)) + '</div>' +
+      '<div class="slide-label">' + esc(s.label) + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+async function selectSlide(idx) {
+  currentSlideIdx = idx;
+  renderSlideList();
+
+  var slide = guiaData.slides[idx];
+  document.getElementById('toolbar-slide-name').textContent = slide.label;
+  document.getElementById('btn-save').style.display = '';
+  document.getElementById('save-status').style.display = '';
+
+  try {
+    var res = await fetch('/api/guias/' + guiaId + '/slides/' + slide.file + '/fields');
+    var data = await res.json();
+    currentFields = data.fields || {};
+    originalFields = JSON.parse(JSON.stringify(currentFields));
+    renderFields();
+    updateSaveStatus('saved');
+
+    var iframe = document.getElementById('preview-iframe');
+    iframe.src = '/presentaciones/' + guiaId + '/slides/' + slide.file;
+  } catch (e) {
+    console.error(e);
+    toast('Error al cargar campos de la diapositiva', true);
+  }
+}
+
+function renderFields() {
+  var grid = document.getElementById('fields-grid');
+  var empty = document.getElementById('empty-state');
+  var keys = Object.keys(currentFields);
+
+  if (keys.length === 0) {
+    grid.style.display = 'none';
+    empty.style.display = '';
+    empty.querySelector('h4').textContent = 'Sin campos editables';
+    empty.querySelector('p').textContent = 'Esta diapositiva no tiene campos marcados como editables (data-field).';
+    return;
+  }
+
+  empty.style.display = 'none';
+  grid.style.display = '';
+
+  grid.innerHTML = keys.map(function(key) {
+    var val = currentFields[key];
+    var lbl = fieldLabel(key);
+    if (isLongField(key, val)) {
+      return '<div class="field-group">' +
+        '<label>' + esc(lbl) + '</label>' +
+        '<textarea data-key="' + esc(key) + '" oninput="onFieldChange(this)">' + esc(val) + '</textarea>' +
+      '</div>';
+    }
+    return '<div class="field-group">' +
+      '<label>' + esc(lbl) + '</label>' +
+      '<input type="text" data-key="' + esc(key) + '" value="' + esc(val).replace(/"/g, '&quot;') + '" oninput="onFieldChange(this)">' +
+    '</div>';
+  }).join('');
+}
+
+function onFieldChange(el) {
+  var key = el.dataset.key;
+  currentFields[key] = el.value;
+  updateSaveStatus('unsaved');
+}
+
+function updateSaveStatus(status) {
+  var el = document.getElementById('save-status');
+  el.className = 'save-status ' + status;
+  if (status === 'saved') el.textContent = 'Guardado';
+  else if (status === 'unsaved') el.textContent = 'Sin guardar';
+  else if (status === 'saving') el.textContent = 'Guardando...';
+}
+
+async function saveFields() {
+  if (currentSlideIdx === null) return;
+  var slide = guiaData.slides[currentSlideIdx];
+
+  var updates = {};
+  for (var key in currentFields) {
+    if (currentFields[key] !== originalFields[key]) {
+      updates[key] = currentFields[key];
+    }
+  }
+
+  if (Object.keys(updates).length === 0) {
+    toast('No hay cambios que guardar.');
+    return;
+  }
+
+  updateSaveStatus('saving');
+
+  try {
+    var res = await fetch('/api/guias/' + guiaId + '/slides/' + slide.file + '/fields', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updates)
+    });
+
+    if (res.ok) {
+      originalFields = JSON.parse(JSON.stringify(currentFields));
+      updateSaveStatus('saved');
+      toast('Diapositiva guardada correctamente.');
+
+      var iframe = document.getElementById('preview-iframe');
+      iframe.src = iframe.src;
+    } else {
+      var err = await res.json();
+      toast(err.error || 'Error al guardar', true);
+      updateSaveStatus('unsaved');
+    }
+  } catch (e) {
+    toast('Error de conexión al guardar.', true);
+    updateSaveStatus('unsaved');
+  }
+}
+
+function setView(view) {
+  currentView = view;
+  document.getElementById('fields-panel').className = 'fields-panel' + (view !== 'fields' ? ' hidden' : '');
+  document.getElementById('preview-panel').className = 'preview-panel' + (view !== 'preview' ? ' hidden' : '');
+  document.getElementById('btn-fields').className = view === 'fields' ? 'active' : '';
+  document.getElementById('btn-preview').className = view === 'preview' ? 'active' : '';
+}
+
+function esc(s) { return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+document.addEventListener('keydown', function(e) {
+  if ((e.metaKey || e.ctrlKey) && e.key === 's') {
+    e.preventDefault();
+    saveFields();
+  }
+});
+
+init();
+</script>
+</body>
+</html>

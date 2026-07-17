@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-dark); }
+
+  .contactos-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 100px;
+    position: relative;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 100%, rgba(169,24,49,0.06) 0%, transparent 70%),
+      var(--enae-dark);
+  }
+
+  .contactos-header {
+    margin-bottom: 40px;
+  }
+  .contactos-header .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 14px;
+  }
+  .contactos-header h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-white);
+  }
+
+  .contactos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .contacto-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 24px 22px;
+  }
+
+  .contacto-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 10px;
+  }
+
+  .contacto-detail {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+  }
+  .contacto-detail strong {
+    color: rgba(255,255,255,0.75);
+    font-weight: 600;
+  }
+
+  .contacto-card .contacto-desc {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+  }
+
+  .contactos-main-phone {
+    margin-top: 20px;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.04em;
+  }
+  .contactos-main-phone span {
+    color: var(--enae-white);
+    font-size: 24px;
+    letter-spacing: 0.06em;
+  }
+
+  .logo-corner { filter: brightness(0) invert(1); }
+  .slide-number { color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<div class="contactos-slide slide-base">
+  <div class="contactos-header">
+    <span class="section-label" data-field="section_label">Contacto</span>
+    <h1 data-field="title">Contactos ENAE</h1>
+  </div>
+
+  <div class="contactos-grid">
+    <div class="contacto-card">
+      <h3 data-field="item_1_title">Admisiones</h3>
+      <div class="contacto-detail" data-field="item_1_email"><strong>admisiones@enae.es</strong></div>
+      <div class="contacto-detail" data-field="item_1_ext">Ext. 2000</div>
+      <div class="contacto-desc" data-field="item_1_desc">Matrícula, becas, documentación de ingreso.</div>
+    </div>
+    <div class="contacto-card">
+      <h3 data-field="item_2_title">Gestión Académica</h3>
+      <div class="contacto-detail" data-field="item_2_email"><strong>gestionacademica@enae.es</strong></div>
+      <div class="contacto-detail" data-field="item_2_ext">Ext. 2100</div>
+      <div class="contacto-desc" data-field="item_2_desc">Horarios, grupos, expedientes, certificados.</div>
+    </div>
+    <div class="contacto-card">
+      <h3 data-field="item_3_title">Internacional</h3>
+      <div class="contacto-detail" data-field="item_3_email"><strong>internacional@enae.es</strong></div>
+      <div class="contacto-detail" data-field="item_3_ext">Ext. 2200</div>
+      <div class="contacto-desc" data-field="item_3_desc">Visados, alojamiento, integración, eventos culturales.</div>
+    </div>
+    <div class="contacto-card">
+      <h3 data-field="item_4_title">Empleo y Prácticas</h3>
+      <div class="contacto-detail" data-field="item_4_email"><strong>empleo@enae.es</strong></div>
+      <div class="contacto-detail" data-field="item_4_ext">Ext. 2300</div>
+      <div class="contacto-desc" data-field="item_4_desc">Prácticas, bolsa de empleo, CV, networking.</div>
+    </div>
+    <div class="contacto-card">
+      <h3 data-field="item_5_title">Dirección</h3>
+      <div class="contacto-detail" data-field="item_5_email"><strong>direccion@enae.es</strong></div>
+      <div class="contacto-detail" data-field="item_5_ext">Ext. 2400</div>
+      <div class="contacto-desc" data-field="item_5_desc">Asuntos institucionales y dirección general.</div>
+    </div>
+  </div>
+
+  <div class="contactos-main-phone">
+    Teléfono central · <span data-field="phone">968 899 899</span>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">10 / 11</span>
+</div>
+</body>
+</html>

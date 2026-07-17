@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-bg-light); }
+
+  .prep-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 100px;
+    position: relative;
+    background: var(--enae-bg-light);
+  }
+
+  .prep-header {
+    margin-bottom: 40px;
+  }
+
+  .prep-header .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 16px;
+  }
+
+  .prep-header h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-ink);
+  }
+
+  .prep-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .prep-card {
+    padding: 32px 28px;
+    background: var(--enae-white);
+    border-radius: 18px;
+    border: 1px solid var(--enae-border);
+  }
+
+  .prep-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(169,24,49,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .prep-card-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--enae-granate);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .prep-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--enae-ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .prep-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--enae-text);
+  }
+
+  .prep-callout {
+    margin-top: 22px;
+    padding: 20px 28px;
+    background: var(--enae-ink);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .prep-callout svg {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    stroke: var(--enae-granate);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .prep-callout p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+  }
+  .prep-callout strong {
+    color: var(--enae-white);
+  }
+
+  .logo-corner { filter: brightness(0); }
+  .slide-number { color: var(--enae-text-light); }
+</style>
+</head>
+<body>
+<div class="prep-slide slide-base">
+  <div class="prep-header">
+    <span class="section-label" data-field="section_label">Paso 7</span>
+    <h1 data-field="title">Preparación académica y digital</h1>
+  </div>
+
+  <div class="prep-grid">
+    <div class="prep-card">
+      <div class="prep-card-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3 data-field="item_1_title">Correo institucional</h3>
+      <p data-field="item_1_desc">Revísalo con frecuencia. ENAE y el profesorado comunican información importante por email.</p>
+    </div>
+
+    <div class="prep-card">
+      <div class="prep-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <h3 data-field="item_2_title">Acceso a CANVAS</h3>
+      <p data-field="item_2_desc">Comprueba tu acceso a la plataforma antes del inicio de clases. Contacta IT si tienes problemas.</p>
+    </div>
+
+    <div class="prep-card">
+      <div class="prep-card-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3 data-field="item_3_title">Ordenador portátil</h3>
+      <p data-field="item_3_desc">Facilita el acceso a materiales, trabajos, presentaciones y plataformas. Imprescindible.</p>
+    </div>
+
+    <div class="prep-card">
+      <div class="prep-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3 data-field="item_4_title">CV y LinkedIn</h3>
+      <p data-field="item_4_desc">Prepara una versión actualizada para aprovechar el servicio de Empleo y Prácticas desde el inicio.</p>
+    </div>
+
+    <div class="prep-card">
+      <div class="prep-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <h3 data-field="item_5_title">Datos de emergencia</h3>
+      <p data-field="item_5_desc">Mantén actualizados tu teléfono, dirección en Murcia y contacto de emergencia en todo momento.</p>
+    </div>
+  </div>
+
+  <div class="prep-callout">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <p data-field="highlight"><strong>Doble título con Panamerican University:</strong> Necesitarás pasaporte, título y notas traducidos al inglés, y formulario Enrollment firmado. ENAE proporciona el modelo.</p>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">08 / 10</span>
+</div>
+</body>
+</html>

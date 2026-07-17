@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-bg-light); }
+
+  .priorities {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    position: relative;
+    background: var(--enae-bg-light);
+  }
+
+  .priorities-header {
+    width: 480px;
+    padding: 100px 60px 100px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .priorities-header::after {
+    content: '';
+    position: absolute;
+    top: 140px;
+    right: 0;
+    bottom: 140px;
+    width: 1px;
+    background: var(--enae-border);
+  }
+
+  .priorities-header .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 20px;
+  }
+
+  .priorities-header h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-ink);
+    margin-bottom: 24px;
+  }
+
+  .priorities-header p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--enae-text-light);
+  }
+
+  .priorities-list {
+    flex: 1;
+    padding: 72px 80px 72px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .priority-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 22px 28px;
+    border-radius: 16px;
+    transition: background 0.2s;
+  }
+  .priority-item:hover {
+    background: rgba(0,0,0,0.025);
+  }
+
+  .priority-num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--enae-granate);
+    opacity: 0.25;
+    min-width: 44px;
+    padding-top: 2px;
+  }
+  .priority-item:first-child .priority-num {
+    opacity: 0.7;
+  }
+
+  .priority-body h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: var(--enae-ink);
+    margin-bottom: 6px;
+  }
+
+  .priority-body p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--enae-text);
+  }
+
+  .priority-tag {
+    margin-top: 8px;
+    display: inline-block;
+    padding: 3px 10px;
+    background: rgba(169,24,49,0.08);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--enae-granate);
+    letter-spacing: 0.04em;
+  }
+
+  .logo-corner { filter: brightness(0); }
+  .slide-number { color: var(--enae-text-light); }
+</style>
+</head>
+<body>
+<div class="priorities slide-base">
+  <div class="priorities-header">
+    <span class="section-label" data-field="section_label">Paso 1</span>
+    <h1 data-field="title">Qué debes resolver primero</h1>
+    <p data-field="body">Organiza tus acciones por orden de impacto. Cada paso depende del anterior.</p>
+  </div>
+
+  <div class="priorities-list">
+    <div class="priority-item">
+      <span class="priority-num">01</span>
+      <div class="priority-body">
+        <h3 data-field="item_1_title">Confirma programa, fecha de inicio e inducción</h3>
+        <p data-field="item_1_desc">Todo el plan de viaje y visado depende del calendario correcto.</p>
+        <span class="priority-tag" data-field="item_1_badge">Prioridad alta</span>
+      </div>
+    </div>
+    <div class="priority-item">
+      <span class="priority-num">02</span>
+      <div class="priority-body">
+        <h3 data-field="item_2_title">Revisa si necesitas visado de estudios</h3>
+        <p data-field="item_2_desc">Los consulados pueden tardar varias semanas o meses en resolver.</p>
+      </div>
+    </div>
+    <div class="priority-item">
+      <span class="priority-num">03</span>
+      <div class="priority-body">
+        <h3 data-field="item_3_title">Prepara documentos académicos apostillados</h3>
+        <p data-field="item_3_desc">Algunos documentos se obtienen en el país de origen y requieren tiempo.</p>
+      </div>
+    </div>
+    <div class="priority-item">
+      <span class="priority-num">04</span>
+      <div class="priority-body">
+        <h3 data-field="item_4_title">Consulta pagos, recibos y justificantes</h3>
+        <p data-field="item_4_desc">Pueden ser necesarios para visado, becas o control personal.</p>
+      </div>
+    </div>
+    <div class="priority-item">
+      <span class="priority-num">05</span>
+      <div class="priority-body">
+        <h3 data-field="item_5_title">Empieza búsqueda de alojamiento</h3>
+        <p data-field="item_5_desc">Murcia tiene opciones variadas, pero conviene reservar con margen.</p>
+      </div>
+    </div>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">03 / 10</span>
+</div>
+</body>
+</html>

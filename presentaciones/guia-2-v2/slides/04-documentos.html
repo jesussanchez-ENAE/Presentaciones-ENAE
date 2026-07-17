@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-dark-warm); }
+
+  .docs-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 100px;
+    position: relative;
+    background:
+      radial-gradient(ellipse 50% 50% at 80% 20%, rgba(169,24,49,0.06) 0%, transparent 70%),
+      var(--enae-dark-warm);
+  }
+
+  .docs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+  }
+  .docs-header-left .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 14px;
+  }
+  .docs-header h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-white);
+  }
+
+  .docs-tip {
+    padding: 12px 20px;
+    background: rgba(169,24,49,0.15);
+    border: 1px solid rgba(169,24,49,0.25);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    max-width: 340px;
+    text-align: right;
+  }
+
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .doc-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 22px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .doc-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 8px;
+    background: rgba(169,24,49,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .doc-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--enae-granate);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .doc-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.7);
+  }
+  .doc-text strong {
+    color: rgba(255,255,255,0.95);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .logo-corner { filter: brightness(0) invert(1); }
+  .slide-number { color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<div class="docs-slide slide-base">
+  <div class="docs-header">
+    <div class="docs-header-left">
+      <span class="section-label" data-field="section_label">Paso 2</span>
+      <h1 data-field="title">Documentos que debes llevar</h1>
+    </div>
+    <div class="docs-tip" data-field="highlight">Lleva los documentos importantes en equipaje de mano. Copia digital en la nube y offline en el móvil.</div>
+  </div>
+
+  <div class="docs-grid">
+    <div class="doc-card">
+      <div class="doc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/></svg></div>
+      <div class="doc-text" data-field="item_1_desc"><strong>Pasaporte y visado</strong>Vigente, con copia digital</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div class="doc-text" data-field="item_2_desc"><strong>Carta de admisión</strong>Certificado ENAE original</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div class="doc-text" data-field="item_3_desc"><strong>Justificantes de pago</strong>Beca o subvención si aplica</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div class="doc-text" data-field="item_4_desc"><strong>Seguro médico</strong>Póliza completa válida</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="doc-text" data-field="item_5_desc"><strong>Reserva alojamiento</strong>Contrato con dirección exacta</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="doc-text" data-field="item_6_desc"><strong>Billete de viaje</strong>Vuelo, tren o autobús</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+      <div class="doc-text" data-field="item_7_desc"><strong>Documentos académicos</strong>Título, notas, apostillas</div>
+    </div>
+    <div class="doc-card">
+      <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg></div>
+      <div class="doc-text" data-field="item_8_desc"><strong>Contactos de emergencia</strong>ENAE, familia, alojamiento</div>
+    </div>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">04 / 11</span>
+</div>
+</body>
+</html>

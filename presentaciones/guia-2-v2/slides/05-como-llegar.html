@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-bg-light); }
+
+  .travel-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    position: relative;
+    background: var(--enae-bg-light);
+  }
+
+  .travel-left {
+    width: 500px;
+    padding: 80px 60px 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .travel-left .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 20px;
+  }
+  .travel-left h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-ink);
+    margin-bottom: 24px;
+  }
+  .travel-left p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--enae-text-light);
+  }
+
+  .travel-right {
+    flex: 1;
+    padding: 72px 80px 72px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .route-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 28px;
+    background: var(--enae-white);
+    border: 1px solid var(--enae-border);
+    border-radius: 16px;
+  }
+
+  .route-time {
+    text-align: center;
+    min-width: 80px;
+  }
+  .route-time .time-val {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--enae-granate);
+    line-height: 1;
+  }
+  .route-time .time-unit {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--enae-text-light);
+    margin-top: 4px;
+  }
+
+  .route-divider {
+    width: 1px;
+    height: 48px;
+    background: var(--enae-border);
+  }
+
+  .route-info h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--enae-ink);
+    margin-bottom: 6px;
+  }
+  .route-info p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--enae-text);
+  }
+
+  .travel-tip {
+    margin-top: 8px;
+    padding: 16px 20px;
+    background: rgba(169,24,49,0.06);
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--enae-ink);
+    font-weight: 600;
+  }
+
+  .logo-corner { filter: brightness(0); }
+  .slide-number { color: var(--enae-text-light); }
+</style>
+</head>
+<body>
+<div class="travel-slide slide-base">
+  <div class="travel-left">
+    <span class="section-label" data-field="section_label">Paso 3</span>
+    <h1 data-field="title">Cómo llegar a Murcia</h1>
+    <p data-field="body">Varias opciones de transporte según tu punto de llegada a España. Compra billetes con antelación y valora seguro de cancelación.</p>
+  </div>
+
+  <div class="travel-right">
+    <div class="route-card">
+      <div class="route-time">
+        <div class="time-val">20</div>
+        <div class="time-unit">minutos</div>
+      </div>
+      <div class="route-divider"></div>
+      <div class="route-info">
+        <h3 data-field="item_1_title">Aeropuerto de Corvera (RMU)</h3>
+        <p data-field="item_1_desc">Aeropuerto regional de Murcia. Conexión directa por carretera.</p>
+      </div>
+    </div>
+
+    <div class="route-card">
+      <div class="route-time">
+        <div class="time-val">60</div>
+        <div class="time-unit">minutos</div>
+      </div>
+      <div class="route-divider"></div>
+      <div class="route-info">
+        <h3 data-field="item_2_title">Aeropuerto de Alicante (ALC)</h3>
+        <p data-field="item_2_desc">Buenas conexiones internacionales. Autobús ALSA directo a Murcia.</p>
+      </div>
+    </div>
+
+    <div class="route-card">
+      <div class="route-time">
+        <div class="time-val">4-5</div>
+        <div class="time-unit">horas</div>
+      </div>
+      <div class="route-divider"></div>
+      <div class="route-info">
+        <h3 data-field="item_3_title">Desde Madrid</h3>
+        <p data-field="item_3_desc">Autobús desde T4, tren Renfe desde Atocha, o vuelo a Alicante + autobús.</p>
+      </div>
+    </div>
+
+    <div class="travel-tip" data-field="tip">Compra billetes con antelación. Si el visado no está cerrado, valora seguro de cancelación.</div>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">05 / 11</span>
+</div>
+</body>
+</html>

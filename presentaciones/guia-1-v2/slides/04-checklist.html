@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-dark-warm); }
+
+  .checklist-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 100px;
+    background:
+      radial-gradient(ellipse 50% 50% at 80% 20%, rgba(169,24,49,0.06) 0%, transparent 70%),
+      var(--enae-dark-warm);
+    position: relative;
+  }
+
+  .checklist-slide .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 16px;
+  }
+
+  .checklist-slide h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--enae-white);
+    margin-bottom: 44px;
+  }
+
+  .check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 48px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 22px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+  }
+
+  .check-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 8px;
+    border: 2px solid rgba(169,24,49,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .check-icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--enae-granate);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.7;
+  }
+
+  .check-text {
+    font-size: 16px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.75);
+  }
+  .check-text strong {
+    color: rgba(255,255,255,0.95);
+    font-weight: 600;
+  }
+
+  .logo-corner { filter: brightness(0) invert(1); }
+  .slide-number { color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<div class="checklist-slide slide-base">
+  <span class="section-label" data-field="section_label">Paso 2</span>
+  <h1 data-field="title">Checklist tras recibir admisión</h1>
+
+  <div class="check-grid">
+    <div class="check-item">
+      <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="check-text" data-field="item_1_desc"><strong>Verifica tus datos</strong> — nombre, pasaporte, programa y datos personales correctos en la documentación.</div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="check-text" data-field="item_2_desc"><strong>Carpeta digital</strong> — carta de admisión, justificantes de pago, calendario, seguro médico y documentación académica.</div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="check-text" data-field="item_3_desc"><strong>Certificados para visado</strong> — solicita a ENAE admisión, beca o subvención y plan de estudios.</div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="check-text" data-field="item_4_desc"><strong>Fecha de inicio</strong> — confirma con Gestión Académica la inducción y primeros hitos del calendario.</div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="check-text" data-field="item_5_desc"><strong>Finanzas</strong> — contacta si necesitas factura, recibo o justificante de pagos internacionales.</div>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="check-text" data-field="item_6_desc"><strong>Acceso digital</strong> — comprueba correo institucional, CANVAS y comunicaciones oficiales antes del inicio.</div>
+    </div>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">04 / 10</span>
+</div>
+</body>
+</html>

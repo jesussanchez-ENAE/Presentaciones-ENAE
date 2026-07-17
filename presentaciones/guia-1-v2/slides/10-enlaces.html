@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-granate); }
+
+  .cta-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px;
+    position: relative;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,255,255,0.08) 0%, transparent 60%),
+      var(--enae-granate);
+  }
+
+  .cta-slide h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--enae-white);
+    margin-bottom: 24px;
+  }
+
+  .cta-sub {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin-bottom: 56px;
+  }
+
+  .links-grid {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 900px;
+  }
+
+  .link-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--enae-white);
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .link-pill:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  .link-pill svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.6;
+  }
+
+  .cta-footer {
+    position: absolute;
+    bottom: 48px;
+    left: 100px;
+    right: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cta-footer-left {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .logo-corner { filter: brightness(0) invert(1); }
+  .slide-number { color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<div class="cta-slide slide-base">
+  <h1 data-field="cta_title">Prepara tu llegada</h1>
+  <p class="cta-sub" data-field="cta_subtitle">Consulta estos recursos para comenzar a organizar tu viaje y tu estancia en Murcia.</p>
+
+  <div class="links-grid">
+    <a class="link-pill" href="https://sede.administracionespublicas.gob.es/pagina/index/directorio/icpplus">
+      <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Cita extranjería
+    </a>
+    <a class="link-pill" href="https://www.tranviademurcia.es">
+      <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Tranvía de Murcia
+    </a>
+    <a class="link-pill" href="https://www.renfe.com">
+      <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Renfe
+    </a>
+    <a class="link-pill" href="https://www.alsa.es">
+      <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      ALSA
+    </a>
+    <a class="link-pill" href="https://www.aemet.es">
+      <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      AEMET
+    </a>
+    <a class="link-pill" href="https://www.idealista.com">
+      <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Idealista
+    </a>
+    <a class="link-pill" href="https://www.fotocasa.es">
+      <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Fotocasa
+    </a>
+  </div>
+
+  <div class="cta-footer">
+    <span class="cta-footer-left" data-field="footer">ENAE Business School · Welcome Guide · Alumnos Internacionales</span>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">10 / 10</span>
+</div>
+</body>
+</html>

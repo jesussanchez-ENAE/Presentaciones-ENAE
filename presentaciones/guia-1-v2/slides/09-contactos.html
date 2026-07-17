@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-dark-warm); }
+
+  .contacts-slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 100px;
+    position: relative;
+    background:
+      radial-gradient(ellipse 40% 40% at 85% 85%, rgba(169,24,49,0.06) 0%, transparent 70%),
+      var(--enae-dark-warm);
+  }
+
+  .contacts-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .contacts-header-left .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--enae-granate);
+    margin-bottom: 14px;
+  }
+
+  .contacts-header h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--enae-white);
+  }
+
+  .contacts-phone {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.02em;
+  }
+  .contacts-phone span {
+    color: var(--enae-white);
+  }
+
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .contact-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-ext {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--enae-granate);
+    margin-bottom: 6px;
+  }
+  .contact-ext-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 14px;
+  }
+
+  .contact-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--enae-white);
+    margin-bottom: 8px;
+  }
+
+  .contact-card .contact-email {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 12px;
+  }
+
+  .contact-card p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.45);
+    flex: 1;
+  }
+
+  .logo-corner { filter: brightness(0) invert(1); }
+  .slide-number { color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<div class="contacts-slide slide-base">
+  <div class="contacts-header">
+    <div class="contacts-header-left">
+      <span class="section-label" data-field="section_label">Paso 8</span>
+      <h1 data-field="title">Contactos ENAE</h1>
+    </div>
+    <div class="contacts-phone">
+      <span data-field="phone">+34 968 899 899</span>
+    </div>
+  </div>
+
+  <div class="contacts-grid">
+    <div class="contact-card">
+      <div class="contact-ext" data-field="item_1_ext">Ext. 7</div>
+      <div class="contact-ext-label">Extensión</div>
+      <h3 data-field="item_1_title">IT / Soporte Técnico</h3>
+      <div class="contact-email" data-field="item_1_email">soporte@enae.es</div>
+      <p data-field="item_1_desc">Acceso a CANVAS, plataformas virtuales, correo institucional, usuarios, contraseñas y problemas técnicos.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-ext" data-field="item_2_ext">Ext. 5</div>
+      <div class="contact-ext-label">Extensión</div>
+      <h3 data-field="item_2_title">Finanzas / Pagos</h3>
+      <div class="contact-email" data-field="item_2_email">finanzas@enae.es</div>
+      <p data-field="item_2_desc">Plan de pagos, cuotas, vencimientos, recibos, facturas, justificantes y métodos de pago internacionales.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-ext" data-field="item_3_ext">Ext. 2</div>
+      <div class="contact-ext-label">Extensión</div>
+      <h3 data-field="item_3_title">Gestión Académica</h3>
+      <div class="contact-email" data-field="item_3_email">gestion_academica@enae.es</div>
+      <p data-field="item_3_desc">Calendario, horarios, grupos, asistencia, evaluaciones, certificados, notas, expedientes y títulos.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-ext" data-field="item_4_ext">Ext. 2</div>
+      <div class="contact-ext-label">Extensión</div>
+      <h3 data-field="item_4_title">Admisiones</h3>
+      <div class="contact-email" data-field="item_4_email">admisiones@enae.es</div>
+      <p data-field="item_4_desc">Documentación de acceso, requisitos, matrícula, datos personales, becas e incorporación.</p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-ext" data-field="item_5_ext">Ext. 3-4</div>
+      <div class="contact-ext-label">Extensión</div>
+      <h3 data-field="item_5_title">Empleo / Prácticas</h3>
+      <div class="contact-email" data-field="item_5_email">empleo@enae.es</div>
+      <p data-field="item_5_desc">Prácticas, empleo, orientación profesional, CV, LinkedIn, networking y procesos de selección.</p>
+    </div>
+  </div>
+
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+  <span class="slide-number">09 / 10</span>
+</div>
+</body>
+</html>

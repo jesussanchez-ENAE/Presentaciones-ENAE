@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body { background: var(--enae-dark); }
+
+  .cover {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 100px 100px;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(169,24,49,0.12) 0%, transparent 70%),
+      linear-gradient(160deg, #161817 0%, #1a1312 40%, #161817 100%);
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -100px;
+    width: 900px;
+    height: 900px;
+    border: 1px solid rgba(169,24,49,0.08);
+    border-radius: 50%;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(169,24,49,0.05);
+    border-radius: 50%;
+  }
+
+  .cover-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px 8px 14px;
+    background: rgba(169,24,49,0.15);
+    border: 1px solid rgba(169,24,49,0.25);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+    width: fit-content;
+  }
+  .cover-badge .dot {
+    width: 8px; height: 8px;
+    background: var(--enae-granate);
+    border-radius: 50%;
+  }
+
+  .cover h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--enae-white);
+    margin-bottom: 20px;
+  }
+  .cover h1 span {
+    color: var(--enae-granate);
+  }
+
+  .cover-sub {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.55);
+    max-width: 700px;
+    margin-bottom: 48px;
+  }
+
+  .cover-line {
+    width: 80px;
+    height: 3px;
+    background: var(--enae-granate);
+    border-radius: 2px;
+  }
+
+  .logo-corner { filter: brightness(0) invert(1); }
+  .slide-number { color: rgba(255,255,255,0.3); }
+
+  .cover-guide-num {
+    position: absolute;
+    top: 44px;
+    left: 100px;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+</style>
+</head>
+<body>
+<div class="cover slide-base">
+  <span class="cover-guide-num" data-field="guide_num">Guía 01</span>
+  <img src="../../../src/logos/LOGO_ENAE_HORIZONTAL.svg" alt="ENAE" class="logo-corner">
+
+  <div class="cover-badge" data-field="badge">
+    <span class="dot"></span>
+    Alumnos internacionales presenciales
+  </div>
+
+  <h1 data-field="title">Welcome<br><span>Guide</span></h1>
+
+  <p class="cover-sub" data-field="subtitle">Primeros pasos tras la admisión.<br>Todo lo que necesitas para planificar tu llegada a Murcia.</p>
+
+  <div class="cover-line"></div>
+
+  <span class="slide-number">01 / 10</span>
+</div>
+</body>
+</html>
